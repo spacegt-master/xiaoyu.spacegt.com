@@ -14,9 +14,10 @@
 				<div class="grid-single">
 					<div class="grid-sizer">
 					</div>
-					<div class="grid-item" v-for="(img,index) in images" :key="img">
-						<a :href="'/images/works/'+img" data-effect="mfp-zoom-in">
-							<img class="b-lazy" :data-src="'/images/works/thumb/'+img" :src="'/images/works/thumb/'+img" :alt="index+1">
+					<div class="grid-item" v-for="(img, index) in images" :key="img">
+						<a :href="'/images/works/' + img" data-effect="mfp-zoom-in">
+							<img class="b-lazy" :data-src="'/images/works/thumb/' + img" :src="'/images/works/thumb/' + img"
+								:alt="index + 1">
 						</a>
 					</div>
 				</div>
@@ -36,107 +37,138 @@
 </template>
 
 <script setup>
-	import sidebarVue from '../components/sidebar.vue'
-	import {
-		reactive,
-		onMounted
-	} from 'vue'
-	const images = reactive([
-		'1-tic.jpg',
-		'1-tic.png',
-		'2-tic.png',
-		'3-tic.png',
-		'4-tic.png',
-		'8-tic.png',
-		'9-tic.png',
-		'10-1-tic.jpg',
-		'10-2-tic.jpg',
-		'10-3-tic.jpg',
-		'10-4-tic.jpg',
-		'10-6-tic.jpg',
-		'10-7-tic.jpg',
-		'10-8-tic.jpg',
-		'10-9-tic.jpg',
-		'10-10-tic.jpg',
-		'5-tic.png',
-		'6-tic.png',
-		'7-tic.png',
-		'37-tic.jpg',
-		'11-tic.jpg',
-		'12-tic.jpg',
-		'13-tic.jpg',
-		'14-tic.jpg',
-		'15-tic.jpg',
-		'16-tic.jpg',
-		'17-tic.jpg',
-		'18-tic.jpg',
-		'19-tic.jpg',
-		'10-tic.jpg',
-		'11-tic.jpg',
-		'12-tic.jpg',
-		'13-tic.jpg',
-		'14-tic.jpg',
-		'15-tic.jpg',
-		'16-tic.jpg',
-		'17-tic.jpg',
-		'18-tic.jpg',
-		'19-tic.jpg',
-		'20-tic.jpg',
-		'21-tic.jpg',
-		'22-tic.jpg',
-		'23-tic.jpg',
-		'24-tic.jpg',
-		'25-tic.jpg',
-		'26-tic.jpg',
-		'27-tic.jpg',
-		'28-tic.jpg',
-		'29-tic.jpg',
-		'30-tic.jpg',
-		'31-tic.jpg',
-		'32-tic.jpg',
-		'33-tic.jpg',
-		'34-tic.jpg',
-		'35-tic.jpg',
-		'36-tic.jpg'
-	])
+import sidebarVue from '../components/sidebar.vue'
+import {
+	reactive,
+	onMounted
+} from 'vue'
+const images = reactive([
+	'20241020-1-tic.jpg',
+	'20241020-2-tic.jpg',
+	'20241020-3-tic.jpg',
+	'20241020-4-tic.jpg',
+	'20241020-5-tic.jpg',
+	'20241020-6-tic.jpg',
+	'20241020-7-tic.jpg',
+	'20241020-8-tic.jpg',
+	'20241019-1-tic.jpg',
+	'20241019-2-tic.jpg',
+	'20241019-3-tic.jpg',
+	'20241019-4-tic.jpg',
+	'20241019-5-tic.jpg',
+	'20241019-6-tic.jpg',
+	'20241019-7-tic.jpg',
+	'20241019-8-tic.jpg',
+	'20241019-9-tic.jpg',
+	'20241019-10-tic.jpg',
+	'20241019-11-tic.jpg',
+	'20241019-12-tic.jpg',
+	'20241019-13-tic.jpg',
+	'20241019-14-tic.jpg',
+	'20241019-15-tic.jpg',
+	'20241019-16-tic.jpg',
+	'20241019-17-tic.jpg',
+	'20241019-18-tic.jpg',
+	'20241019-19-tic.jpg',
+	'20241019-20-tic.jpg',
+	'20241019-21-tic.jpg',
+	'20241019-22-tic.jpg',
+	'20241019-23-tic.jpg',
+	'1-tic.jpg',
+	'2-tic.jpg',
+	'2-tic.png',
+	'3-tic.png',
+	'4-tic.png',
+	'8-tic.png',
+	'9-tic.png',
+	'10-1-tic.jpg',
+	'10-2-tic.jpg',
+	'10-3-tic.jpg',
+	'10-4-tic.jpg',
+	'10-6-tic.jpg',
+	'10-7-tic.jpg',
+	'10-8-tic.jpg',
+	'10-9-tic.jpg',
+	'10-10-tic.jpg',
+	'5-tic.png',
+	'6-tic.png',
+	'7-tic.png',
+	'37-tic.jpg',
+	'11-tic.jpg',
+	'12-tic.jpg',
+	'13-tic.jpg',
+	'14-tic.jpg',
+	'15-tic.jpg',
+	'16-tic.jpg',
+	'17-tic.jpg',
+	'18-tic.jpg',
+	'19-tic.jpg',
+	'10-tic.jpg',
+	'11-tic.jpg',
+	'12-tic.jpg',
+	'13-tic.jpg',
+	'14-tic.jpg',
+	'15-tic.jpg',
+	'16-tic.jpg',
+	'17-tic.jpg',
+	'18-tic.jpg',
+	'19-tic.jpg',
+	'20-tic.jpg',
+	'21-tic.jpg',
+	'22-tic.jpg',
+	'23-tic.jpg',
+	'24-tic.jpg',
+	'25-tic.jpg',
+	'26-tic.jpg',
+	'27-tic.jpg',
+	'28-tic.jpg',
+	'29-tic.jpg',
+	'30-tic.jpg',
+	'31-tic.jpg',
+	'32-tic.jpg',
+	'33-tic.jpg',
+	'34-tic.jpg',
+	'35-tic.jpg',
+	'36-tic.jpg',
 
-	onMounted(() => {
-		// Gallery Single page START
-		$('.grid-single .grid-item img').parazoom({
-			customCursorIcon: 'images/magnify.svg',
-			customCursorSize: '30px',
-			transitionTime: '1s',
-			transitionTimeLeave: '1s'
-		});
+])
 
-		var $grid = $('.grid-single').masonry({
-			itemSelector: '.grid-single .grid-item',
-			percentPosition: true,
-			columnWidth: '.grid-single .grid-sizer'
-		});
-		$grid.imagesLoaded().progress(function() {
-			$grid.masonry({
-				gutter: 15
-			});
-		});
+onMounted(() => {
+	// Gallery Single page START
+	$('.grid-single .grid-item img').parazoom({
+		customCursorIcon: 'images/magnify.svg',
+		customCursorSize: '30px',
+		transitionTime: '1s',
+		transitionTimeLeave: '1s'
+	});
 
-		$('.grid-single .grid-item a').magnificPopup({
-			type: 'image',
-			removalDelay: 500,
-			gallery: {
-				enabled: true
-			},
-			callbacks: {
-				beforeOpen: function() {
-					this.st.image.markup = this.st.image.markup.replace('mfp-figure',
-						'mfp-figure mfp-with-anim');
-					this.st.mainClass = this.st.el.attr('data-effect');
-				}
-			},
+	var $grid = $('.grid-single').masonry({
+		itemSelector: '.grid-single .grid-item',
+		percentPosition: true,
+		columnWidth: '.grid-single .grid-sizer'
+	});
+	$grid.imagesLoaded().progress(function () {
+		$grid.masonry({
+			gutter: 15
 		});
-		// Gallery Single page END
-	})
+	});
+
+	$('.grid-single .grid-item a').magnificPopup({
+		type: 'image',
+		removalDelay: 500,
+		gallery: {
+			enabled: true
+		},
+		callbacks: {
+			beforeOpen: function () {
+				this.st.image.markup = this.st.image.markup.replace('mfp-figure',
+					'mfp-figure mfp-with-anim');
+				this.st.mainClass = this.st.el.attr('data-effect');
+			}
+		},
+	});
+	// Gallery Single page END
+})
 </script>
 
-<style>
-</style>
+<style></style>
