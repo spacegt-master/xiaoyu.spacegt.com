@@ -121,6 +121,7 @@ onMounted(() => {
 </script>
 <style>
 @import url(glightbox/dist/css/glightbox.min.css);
+@import url(element-plus/dist/index.css);
 
 body {
 	height: 100%;
