@@ -8,7 +8,19 @@
 				<div class="title-wrapper text-center">
 					<h2 class="title">作品集 - 画廊</h2>
 					<div class="subtitle">
-						<p>我的作品集是一场内心的视觉盛宴。我通过色彩的碰撞和线条的交织，探索潜意识的深处，表达情感的流动和宇宙的奥秘。每一幅画作都是一次心灵的对话，我希望观众能够在作品中找到属于自己的情感共鸣。</p>
+						<p>我的作品集是一场内心的视觉盛宴。我通过色彩的碰撞和线条的交织，探索潜意识的深处，表达情感的流动和宇宙的奥秘。每一幅画作都是一次心灵的对话，我希望观众能够在作品中找到属于自己的情感共鸣。
+						</p>
+					</div>
+				</div>
+				<h2 style="padding: 40px 0 30px 0; font-weight: 500;">最新上传</h2>
+				<div class="grid-single">
+					<div class="grid-sizer">
+					</div>
+					<div class="grid-item" v-for="(item, index) in news" :key="item.img">
+						<a :href="'/images/works/' + item.img" data-effect="mfp-zoom-in">
+							<img class="b-lazy" :data-src="'/images/works/thumb/' + item.img"
+								:src="'/images/works/thumb/' + item.img" :alt="index + 1">
+						</a>
 					</div>
 				</div>
 				<h2 style="padding: 40px 0 30px 0; font-weight: 500;">三维模型</h2>
@@ -17,8 +29,8 @@
 					</div>
 					<div class="grid-item" v-for="(item, index) in model" :key="item.img">
 						<a :href="'/images/works/' + item.img" data-effect="mfp-zoom-in">
-							<img class="b-lazy" :data-src="'/images/works/thumb/' + item.img" :src="'/images/works/thumb/' + item.img"
-								:alt="index + 1">
+							<img class="b-lazy" :data-src="'/images/works/thumb/' + item.img"
+								:src="'/images/works/thumb/' + item.img" :alt="index + 1">
 						</a>
 					</div>
 				</div>
@@ -28,8 +40,8 @@
 					</div>
 					<div class="grid-item" v-for="(item, index) in plane" :key="item.img">
 						<a :href="'/images/works/' + item.img" data-effect="mfp-zoom-in">
-							<img class="b-lazy" :data-src="'/images/works/thumb/' + item.img" :src="'/images/works/thumb/' + item.img"
-								:alt="index + 1">
+							<img class="b-lazy" :data-src="'/images/works/thumb/' + item.img"
+								:src="'/images/works/thumb/' + item.img" :alt="index + 1">
 						</a>
 					</div>
 				</div>
@@ -55,7 +67,28 @@ import {
 	onMounted,
 	computed
 } from 'vue'
+
+
+
 const images = reactive([
+	{ img: '20250304-1.jpg', type: 'news' },
+	{ img: '20250304-2.jpg', type: 'news' },
+	{ img: '20250304-3.jpg', type: 'news' },
+	{ img: '20250304-4.jpg', type: 'news' },
+	{ img: '20250304-5.jpg', type: 'news' },
+	{ img: '20250304-6.jpg', type: 'news' },
+	{ img: '20250304-7.jpg', type: 'news' },
+	{ img: '20250304-8.jpg', type: 'news' },
+	{ img: '20250304-9.jpg', type: 'news' },
+	{ img: '20250304-10.jpg', type: 'news' },
+	{ img: '20250304-11.jpg', type: 'news' },
+	{ img: '20250304-12.jpg', type: 'news' },
+	{ img: '20250304-13.jpg', type: 'news' },
+	{ img: '20250304-14.jpg', type: 'news' },
+	{ img: '20250304-15.jpg', type: 'news' },
+	{ img: '20250304-16.jpg', type: 'news' },
+	{ img: '20250304-17.jpg', type: 'news' },
+	{ img: '20250304-18.jpg', type: 'news' },
 	{ img: '20241020-1-tic.jpg', type: 'model' },
 	{ img: '20241020-2-tic.jpg', type: 'model' },
 	{ img: '20241020-3-tic.jpg', type: 'model' },
@@ -137,6 +170,7 @@ const images = reactive([
 
 ])
 
+const news = computed(() => images.filter(item => item.type == 'news'))
 const model = computed(() => images.filter(item => item.type == 'model'))
 const plane = computed(() => images.filter(item => item.type == 'plane'))
 
@@ -149,12 +183,12 @@ onMounted(() => {
 		transitionTimeLeave: '1s'
 	});
 
-	var $grid = $('.grid-single').masonry({
+	const $grid = $('.grid-single').masonry({
 		itemSelector: '.grid-single .grid-item',
 		percentPosition: true,
 		columnWidth: '.grid-single .grid-sizer'
 	});
-	$grid.imagesLoaded().progress(function () {
+	$grid.imagesLoaded().progress(() => {
 		$grid.masonry({
 			gutter: 15
 		});
