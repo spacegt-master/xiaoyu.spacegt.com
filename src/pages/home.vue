@@ -3,6 +3,7 @@
 		<sidebar-vue></sidebar-vue>
 		<prelodaer-vue></prelodaer-vue>
 		<div class="content home-content">
+			<moreWorks></moreWorks>
 			<div class="swiper swiper-banner">
 				<div class="swiper-wrapper">
 					<!-- Slide START -->
@@ -217,6 +218,7 @@
 import GLightbox from 'glightbox';
 import sidebarVue from '../components/sidebar.vue';
 import prelodaerVue from '../components/prelodaer.vue';
+import moreWorks from '../components/more-works.vue';
 import {
 	onMounted
 } from 'vue'
@@ -275,7 +277,7 @@ onMounted(() => {
 }
 
 .video-play,
-.video-play2{
+.video-play2 {
 	position: absolute;
 	border-radius: 10px;
 	overflow: hidden;
@@ -285,7 +287,7 @@ onMounted(() => {
 }
 
 .video-play:hover,
-.video-play2:hover{
+.video-play2:hover {
 	filter: brightness(1);
 }
 
@@ -302,7 +304,7 @@ onMounted(() => {
 	right: 100px;
 	max-width: 300px;
 	width: 50%;
-	
+
 }
 
 .video-play img,
@@ -315,16 +317,16 @@ onMounted(() => {
 .video-play .el-icon,
 .video-play2 .el-icon {
 	position: absolute;
-    top: 50%;
-    left: 50%;
-	transform: translate(-50%,-50%);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 @media screen and (max-width:770px) {
-	
-.video-play,
-.video-play2{
-	display: none;
-}
+
+	.video-play,
+	.video-play2 {
+		display: none;
+	}
 }
 </style>
