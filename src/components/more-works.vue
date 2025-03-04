@@ -1,13 +1,14 @@
 <template>
     <div class="frame">
-        <div class="custom-btn btn-3"><span />
+        <div class="custom-btn btn-3" @click="router.push('/gallery-single')"><span />
             <div class="text">前往作品集 - 查看更多作品</div>
         </div>
     </div>
 </template>
 
 <script setup>
-
+import { useRouter } from 'vue-router'
+const router = useRouter()
 </script>
 
 <style scoped>
