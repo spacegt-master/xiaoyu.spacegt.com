@@ -1,7 +1,7 @@
 <template>
     <div class="frame">
         <div class="custom-btn btn-3"><span />
-            <div class="text">查看更多作品</div>
+            <div class="text">前往作品集 - 查看更多作品</div>
         </div>
     </div>
 </template>
@@ -24,10 +24,9 @@
 
 .custom-btn {
     margin: 20px;
-    width: 200px;
+    width: 300px;
     height: 40px;
     color: #fff;
-    border-radius: 5px;
     padding: 10px 25px;
     font-family: 'Lato', sans-serif;
     font-weight: 500;
@@ -44,13 +43,14 @@
     left: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    width: 100%;
 }
 
 /* 3 */
 .btn-3 {
     background: rgb(0, 172, 238);
     background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
-    width: 200px;
+    width: 300px;
     height: 40px;
     line-height: 42px;
     padding: 0;
